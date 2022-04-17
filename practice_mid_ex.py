@@ -142,3 +142,122 @@
 #n2 = float(input())
 #print(n1 + n2, n1 - n2, n1 * n2, n1 / n2)
 
+#print('*' * 3)
+
+#print(' ' * 3, '*' * 1)
+#print(' ' * 2, '*' * 3)
+#print(' ' * 1, '*' * 5)
+#print(' ' * 0, '*' * 7)
+
+#print(10/3)
+#print('%.2f' % (10/3))
+
+#_age = 0
+#print(_age)
+
+#a = 0x10
+#b = 0x10
+#c = 0b10000
+#print(a, b, c)
+
+#d = input()
+#print(int(d))
+#print(int(d, 2))
+#print(int(d, 8))
+#print(int(d, 16))
+
+#print('"Welcome to my world"')
+#print('Welcome to my world')
+#print("'I am your friend'")
+#print("I am your friend")
+
+#print( True == 'True' )
+#print( "True" == 'True' )
+#print('Good' == 'Good')
+#print(True == 3>2)
+#print(True == (3>2))
+#print(3>1 == False)
+#print(3>0 == False)
+
+#n = int(input('수 입력: '))
+#if n == True :
+#    print('Good')
+#else:
+#    print('Bad')
+
+#print( not False == False )
+#print((not False)==False)
+#print(not 1 == 2)
+#print((not 1)==2)
+#print((not 0)==1)
+#print(not 1 ==1)
+
+#n = int(input('정수 입력: '))
+#if n & 0b1 == 1:
+#    print('Good')
+#else:
+#    print('Nice')
+
+#print(bin(15))
+#print(bin(~15))
+
+
+#a = 3
+#a += a
+#print(a)
+
+#a = 14
+#print(bin(a))
+#a |= 0b1
+#print(bin(a))
+
+#a = int(input('정수를 입력: '))
+#print('Hello' if a & 0b1 != 1 else 'Welcome')
+
+#print(False == 0 )
+#print(True == 1)
+#print((not 1)==0)
+
+#print(~0b1)
+#print(~1)
+#print(~10)
+#print('Good'=='Good')
+
+
+#if False:
+#    print("good ")
+#print('Morning')
+
+#if True:
+#    print("Good ")
+#else:
+#    print('Morning')
+#    print('Luck')
+
+#for _ in range(3):
+#    print('morning')
+#    for j in range(2):
+#        print('good')
+
+#total = 0
+#while True:
+#    n = int(input('수 입력: '))
+#    if n == -1:
+#        break
+#    elif n%2 != 0 :
+#        total -= n
+#    total += n
+#print('짝수의 총 합: ', total)
+
+#lst = [ 1, 2, 3, 4 ]
+#for i in lst[:3]:
+#    print(i, end = '-순위 ')
+#print(lst[-1])
+
+#data = [1, 2, 3, 4, 5, 6, 7, 8]
+#data[2:5] = [9]
+#print(data)
+
+friend = ('hong', 20, 'M', [189, 69], [True, 'good'])
+some = [list(friend[1:2]), list(friend[4:])]
+print(some)
