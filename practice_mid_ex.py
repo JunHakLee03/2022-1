@@ -258,6 +258,92 @@
 #data[2:5] = [9]
 #print(data)
 
-friend = ('hong', 20, 'M', [189, 69], [True, 'good'])
-some = [list(friend[1:2]), list(friend[4:])]
-print(some)
+#friend = ('hong', 20, 'M', [189, 69], [True, 'good'])
+#some = [list(friend[1:2]), list(friend[4:])]
+#print(some)
+
+#myinfo = {'name':'hong', 'age':20, 'height':178, 'weight':69}
+#lst = []
+#for (k,v) in myinfo.items():
+#    print(v)
+
+#score = {'ko':90, 'ma':99, 'eng':88}
+#points = [ i for i in score.values()]
+#print(points[2])
+
+#lst = []
+#total = 0
+#nofn = 0
+# while True:
+#    n = int(input('양수를 입력'))
+#    if n > -1:
+#        lst.append(n)
+#        nofn = nofn + 1
+#    elif n == -1:
+#        break
+#    elif n < -1:
+#        pass
+#if nofn == 0:
+#    print('입력된 데이터 없음')
+#else:
+#    for i in lst:
+#        total = total + i
+#    print(total/nofn)
+
+
+
+
+#dic = {}
+#total = 0
+#while True:
+#    lec = str(input('과목명: '))
+#    score = input('점수를 입력: ')
+#    if lec == '':
+#        break
+#    else:
+#        dic[lec] = int(score)
+#        total = total + int(score)
+
+#print(dic)
+#print(len(dic))
+#print(total/len(dic))
+#for i in dic:
+#    print(i,'( ', dic[i], ') : ', '*' * (dic[i] // 10))
+
+
+#def calcTotal(lst):
+#    total = 0
+#    for e in lst:
+#        total = total + e
+#    return total
+
+#total = calcTotal([1,2,3,4,5])
+#print(total)
+
+#def output(*v, end = '\n'):
+#    for e in v:
+#        print(e, end = ' ')
+#    print(end = end)
+
+#output(1, end=':')
+#output(2, end=':')
+#output(3)
+
+#def calcSumAvg(*n):
+#    total = 0
+#    nofn = 0
+#    for i in n:
+#        if i >= 0 and i <= 100 :
+#            total = total + i
+#            nofn = nofn + 1
+#        else:
+#            pass
+#    print(total, total / nofn )
+
+#calcSumAvg(4, 6, 4, 6)
+
+def piramid(n):
+    for i in range(0, n):
+        print(' ' * (n - i - 1), '*' * (i * 2 - 1))
+
+piramid(10)
