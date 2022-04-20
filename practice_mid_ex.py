@@ -342,8 +342,59 @@
 
 #calcSumAvg(4, 6, 4, 6)
 
-def piramid(n):
-    for i in range(0, n):
-        print(' ' * (n - i - 1), '*' * (i * 2 - 1))
+#def piramid(n):
+#    for i in range(0, n):
+#        print(' ' * (n - i - 1), '*' * (i * 2 - 1))
 
-piramid(10)
+#piramid(10)
+
+
+#def caltotal(*x):
+#    total = 0
+#    for i in x:
+#        total = total + i
+#    return total
+
+#print( caltotal(1, 2) )
+#print( caltotal() )
+#print( caltotal(1, 3, 5, 7) ) 
+
+
+
+#data = input('정수 값 여러 개를 입력하시오: ')
+#data = data.split()
+#print(data)
+#lst =
+#maxval = lst[0]
+#for v in lst:
+#    if maxval < v:
+#        maxval = v
+    
+#print(maxval)
+
+#nofinput = 0
+#lst = []
+
+#def getnofinput():
+#    global nofinput
+#    nofinput = int(input('데이터의 수를 입력하라: '))
+
+#def getinput():
+#    global lst
+#    for _ in range(nofinput):
+#        lst.append(input('데이터 입력: '))
+    
+#getnofinput()
+#getinput()
+#print(lst)
+
+#for v in range(0, 7):
+#    if v & 0x1 != 0:
+#        print(v, end=' ' )
+#print()
+
+bit = 0
+for v in range(0, 16):
+    if v & 0b10 != 0:
+        print(v, end=' ' )
+print()
