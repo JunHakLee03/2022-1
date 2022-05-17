@@ -393,8 +393,9 @@
 #        print(v, end=' ' )
 #print()
 
-bit = 0
-for v in range(0, 16):
-    if v & 0b10 != 0:
-        print(v, end=' ' )
-print()
+#bit = 0
+#for v in range(0, 16):
+#    if v & 0b10 != 0:
+#        print(v, end=' ' )
+#print()
+
