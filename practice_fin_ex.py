@@ -1,3 +1,28 @@
+#str = '2022Y'
+#print(str.title())
+
+###################
+
+#name = ' Hong Gil Dong       \n'
+#print(':' + name + ':')
+#print(':' + name.strip() + ':')
+
+####################
+
+#import code
+
+
+#name = 'Hong Gil Dong'
+#number = '1 2 3'
+#print(number.join(name))
+#print(':' + name.center(20) + ':')
+#print(':' + name.zfill(20) + ':')
+#print(ord('a')) 
+#ord는 문자 하나만 입력 받아 헤당 문자의 유니코드를 반환
+#print(chr(ord('A')))
+
+#####################
+
 #파일
 #file_variable = open(파일명, 모드)
 #r(read), w(write), r+(read/write)
@@ -131,16 +156,133 @@
 
 #######################
 
-sampleString = 'Good Moring'
+#sampleString = 'Good Moring'
 
-bfile = open('str.bin', 'wb')
-bfile.write(sampleString.encode())
-bfile.close()
+#bfile = open('str.bin', 'wb')
+#bfile.write(sampleString.encode())
+#bfile.close()
 
-bfile = open('str.bin', 'rb')
-data = bfile.read().decode()
-print(data)
-bfile.close()
+#bfile = open('str.bin', 'rb')
+#data = bfile.read().decode()
+#print(data)
+#bfile.close()
 
 #######################
+
+#import struct
+
+#str = 'Good Morning'
+#lst = [1, 2, 3, 4, 5, 6, 7]
+
+#byteData = struct.pack('i', len(str))
+#byteData += str.encode()
+#byteData += struct.pack('i', len(lst))
+#for d in lst:
+#    byteData += struct.pack('i', d)
+
+#file = open('bdata.bin', 'wb')
+#file.write(byteData)
+#file.close()
+
+##########################
+
+#import struct
+
+#file = open('bdata.bin', 'rb')
+#byteData = file.read()
+#file.close()
+
+#strlen = struct.unpack('i', byteData[:4])
+#str = byteData[4:4+strlen[0]].decode()
+#posIntData = 4 + strlen[0]
+#nofInt = struct.unpack('i',
+#posIntData[posIntData:posIntData+4])
+#lst = struct.unpack('i'*nofInt[0], byteData[posIntData+4:])
+
+#print(str)
+#for d in lst:
+#    print(d)
+
+#############################    
+
+#다시보자
+
+#import struct
+#age = 20
+#name = '홍길동'
+#height = 178.5
+#en_name = name.encode('utf-8')
+#fd =open('data.dat','wb')
+#fd.write(struct.pack('if%ds' % len(en_name), age, height, en_name))
+#fd.close()
+#fd = open('data.dat','rb')
+#readdata = fd.read()
+#fd.close()
+#strlen = len(readdata) - struct.calcsize('if')
+#data = struct.unpack('if%ds' % strlen, readdata)
+#print(data[0], data[1], data[2].decode('utf-8'))
+
+#################################
+
+#이진 파일 입출력
+#pickle 모듈 이용
+#-쓰기: pickle.dump(data, file_variable)
+#-읽기: pickle.load(file_variable)
+
+##################################
+
+#import pickle
+
+#bfile = open('test.bin', 'wb')
+
+#pickle.dump(65, bfile)
+#pickle.dump([1, 2, 3], bfile)
+#pickle.dump('good', bfile)
+
+#bfile.close()
+
+##################################
+
+#import pickle
+
+#bfile = open('test.bin', 'rb')
+
+#n = pickle.load(bfile)
+#lst = pickle.load(bfile)
+#s = pickle.load(bfile)
+
+#print(n)
+#print(lst)
+#print(s)
+
+#bfile.close()
+
+##################################
+
+#이진 파일 파트 전체적으로 다시 보기
+
+##################################
+
+#예외 처리
+#종류 -NameError, ZeroDivisionError, FileNotFoundError, IndexError 등
+
+##################################
+
+#try :
+#    file = open('data.txt', 'r')
+
+#    lines = file.readlines()
+#    for line in lines :
+#        print(line)
+
+#except FileNotFoundError :
+#    print('파일 data.txt가 없음')
+
+#else:
+#    file.close()
+
+#finally:
+#    print('실행 완료')
+
+###################################
 
