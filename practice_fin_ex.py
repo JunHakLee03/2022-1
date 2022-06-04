@@ -606,3 +606,194 @@
 
 ###################################
 
+#위젯.pack(배치옵션)
+#side = LEFT(또는 RIGHT) : 좌측 정렬
+#side = TOP(또는 BOTTOM)
+#fill = X : 폭을 창의 크기에 맞춤
+#fill = Y : 높이를 창의 크기에 맞춤
+#padx=값, pady=값 : 위젯사이 여백
+#ipadx=값, ipady=값 : 위젯 내 여백
+
+###################################
+
+#from tkinter import *
+#blst = []
+#win = Tk()
+#win.geometry( '350x250' )
+
+#for i in range(0,4):
+#    blst.append(Button(win,text='button %d'%i, bg='#51FFA6'))
+#    blst[-1].pack(side=LEFT, fill=Y, padx=10, pady=10)
+
+#win.mainloop()
+
+######################################
+
+#고정 위치 배치
+#위젯.place(x=xpos, y=yposd, width=폭, height=높이)
+
+#from tkinter import *
+#blst = []
+#win = Tk()
+#win.geometry( '350x250' )
+#for i in range(0,4):
+#    blst.append( Button(win,text='button %d'% i,bg='#51FFA6' ) )
+#    blst[-1].place(x=i*10, y=i*55, height=50, width=200 )
+#win.mainloop()
+
+#########################################
+
+#프레임: 다른 위젯을 포함 할 수 있는 사각 영역 위젯
+#- 위젯 배치가 한 종류가 아닌 경우에 사용
+#Frame(parent)
+#표시: pack() 메소드 호출
+
+#from tkinter import *
+
+#w = Tk()
+#w.title('GUI Test')
+#w.geometry('300x200')
+
+#lst = []
+#for i in range(0, 5):
+#    lst.append(Label(w, text = 'TEXT %d'%i))
+
+#frame = Frame(w)
+
+#lst.append(frame)
+
+#b1 = Button(frame, text='BUTTON' )
+#b2 = Button( frame, text='WHAT' )
+#b1.pack(side=LEFT)
+#b2.pack()
+
+#for obj in lst :
+#    obj.pack(side = BOTTOM)
+
+#w.mainloop()
+
+###############################
+
+#이벤트
+#종류: 클릭(아무 버튼, 왼쪽, 오른쪽, 휠)
+#마우스 포인터가 위젯으로 들어 올 때
+#마우스 포인터가 위젯에서 나갈 때
+#키보드 키를 누를 때
+
+#이벤트 처리
+#위젯과 이벤트를 처리할 함수를 연결
+#위젯.bind(이벤트코드, 처리함수)
+
+#from tkinter import *
+
+#def click(event):
+#    print('Mouse Clicked : %d' %\
+#        (event.num))
+
+#def drag(event):
+#    print('Mouse Drag : %dx%d' %\
+#        (event.x, event.y))
+
+#win = Tk()
+#win.title('Event Handler')
+#win.geometry('250x200')
+#win.bind('<Button-1>', click)
+#win.bind('<B1-Motion>', drag)
+
+#win.mainloop()
+
+##################################
+
+#from tkinter import *
+
+#def keyin(event):
+#    print('Key in : ' + event.char)
+#    if event.char == 'e':
+#        exit()
+
+#def main():
+#    win = Tk()
+#    win.geometry('400x300')
+#    win.bind('<Key>', keyin)
+#    Label(win, text='Key Event Tester').pack()
+#    win.mainloop()
+
+#main()
+
+###################################
+
+#메뉴
+#menu = Menu(parent_widget)
+#파라미터: parent_widget: 메뉴가 표시될 상위 위젯
+
+#최상위 윈도에 메뉴 넣기
+#-메뉴바 형태로 표현됨
+#-Tk() 객체의 config() 메소드 이용
+#win.config(menu=menu_obj)
+
+#Menu의 서브메뉴 넣기
+#menu.add_cascade(label='menu title', menu = menuobj)
+
+#Menu의 메누 아이템 넣기
+#선택하면 기능 실행
+#menu.add_command(label='menu title', command=fn)
+
+###############################
+
+#메뉴 작성 단계
+
+#1. Menu 위젯 생성
+#-메뉴바로 사용할 위젯
+
+#2. 최상위 윈도에 1에서 작성한 위젯 등록
+#win.config(menu=menubar)
+
+#3. Menu 위젯 생성
+#menubar(or parentmenu).add_cascade(label='title str', menu=widget)
+#menuwidget.add_command(label='title str', command=fn)
+
+################################
+
+from tkinter import *
+
+topwin = None
+def initwin():
+    global topwin
+    topwin = Tk()
+    topwin.title( 'Menu Testing' )
+    topwin.geometry( '300x250' )
+
+def fn():
+    print('Menu processing')
+
+def mkmenu() :
+    menubar = Menu( topwin )
+    topwin.config( menu=menubar )
+
+    filemenu = Menu( menubar )
+    editmenu = Menu( menubar )
+
+# for File menu
+    filemenu.add_command( label='New', command=fn )
+    projmenu = Menu( filemenu )
+    projmenu.add_command( label='Save' )
+    projmenu.add_command( label='Open' )
+    filemenu.add_cascade( label='Project', menu=projmenu )
+    filemenu.add_separator()
+    filemenu.add_command( label='Exit', command=exit )
+
+# for Edit menu
+    editmenu.add_command( label='Copy', command=fn )
+    editmenu.add_command( label='Cut' )
+    editmenu.add_command( label='Paste' )
+
+    menubar.add_cascade( label='File', menu=filemenu )
+    menubar.add_cascade( label='Edit', menu=editmenu )
+
+def apploop():
+    topwin.mainloop()
+
+if __name__ == '__main__' :
+    initwin()
+    mkmenu()
+    apploop()
