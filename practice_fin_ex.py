@@ -286,3 +286,323 @@
 
 ###################################
 
+#class 어떤 것을 특징(속성, 기능)에 따라 분류한 것
+
+#클래스를 정의 할 때 필드와 메소드가 필요
+#속성(필드) : 특징을 표현 할 수 있는 값
+#기능(메소드) : 특징을 표현 할 수 있는 동작
+
+#class Score:
+    
+#    def __init__(self):
+#        self.point = 0
+
+#    def get(self):
+#        return self.point
+
+#    def set(self, point):
+#        self.point = point
+
+#세 개의 메소드(기능)(__init__, get, set)
+#한 개의 필드(속성)(point)
+
+###########################
+
+#class를 정의 한다고 실제 어떤 것이 만들어지는 것은 아님(설계도)
+#객체 : 정의된 class를 이용한여 만든 어떤 것
+#인스턴스
+
+#obj = className()
+
+#obj.method() #반환 값이 없는 경우
+
+#variable = obj.method() #반환 값이 있는 경우
+
+##############################
+#class Score:
+#    def __init__(self):
+#        self.point = 0
+
+#    def get(self):
+#        return self.point
+
+#    def set(self, point):
+#        self.point = point
+
+#lee = Score()
+#lee.point = 88
+#print(lee.get())
+#lee.set(99)
+#print(lee.get())
+
+################################
+
+#메소드는 객체 자신을 첫 번째 매개 변수로 받음
+#홀출 할 때 전달하지 않아도 자동으로 전달
+
+#생성자 : 객체 생성 시 자동으로 호출되는 메소드
+#주요 목적: 인스턴스 필드 값 초기화
+#메소드 처럼 매개변수를 가질 수 있음
+#매개변수는 객체 생성 시 전달
+
+#형태
+#def __init__(self):
+#    statement
+
+################################
+
+#필드의 종류
+
+#클래스 필드: 클래스를 이용하여 모든 객체가 공유 
+#메소드 외부에 있음
+#className.variable 형태로 사용
+
+#인스턴스 필드 : 각 객체마다 만들어지는 필드 
+#객체가 공유 X
+#self.variable 형태로 사용
+
+#이름이 동일한 경우 인스턴스 필드 우선
+
+###############################
+
+#class Score:
+#    point = 0
+    
+#    def __init__(self, point=99):
+#        self.point = point
+#        Score.point = Score.point + 1
+
+#print(Score.point)
+#myScore = Score()
+#print(Score.point)
+#yourScore = Score(100)
+#print(Score.point)
+
+#print(myScore.point)
+#print(yourScore.point)
+#print(Score.point)
+
+##################################
+
+#클래스 상속
+
+#class className(super_class):
+#    variable = init_value
+
+#    def __init__(self, paraments):
+#        statement
+
+#    def methodName(self, parameters):
+#        statement
+
+#class Animal :
+#    def sound(self):
+#        return 'Unknown'
+
+#class Dog(Animal):
+#    def sound(self):
+#        return '멍멍'
+
+#class Cat(Animal):
+#    def sound (self):
+#        return '야옹'
+
+#myPet = Dog()
+#yourPet = Cat()
+#pet = Animal()
+
+#print(myPet.sound())
+#print(yourPet.sound())
+#print(pet.sound())
+
+#############################
+
+#윈도우 프로그래밍
+#GUI 이용
+#tkinter 모듈 이용
+
+#from tkinter import *
+
+#win = Tk() #루트 윈도우 또는 베이스 윈도우 반환
+
+#win.mainloop() #윈도우의 각종 이벤트 처리
+
+############################
+
+#win.title(제목) #윈도우 제목
+
+#win.geometry('widthxheigh+xpos+ypos') #기본 크기와 위치
+
+#win.resizable(width=True, height=Flase) #크기 변경 가능 여부
+
+#Label(window, 옵션) #문자, 이미지 출력
+#옵션: 
+# - text='문자열' 
+# - font= ('폰트이름', 크기)
+# - bg= '색깔', fg='색깔'
+# - width=크기, height=크기
+# - anchor= N, NE, E, SE, S, SW, W, NE, CENTER #anchor(고정시키다)(정렬)
+# - image= image
+#표시: pack()메소드 호출
+
+##############################
+
+#from tkinter import *
+#import time
+#class MyWin( Tk ):
+#    def __init__(self):
+#        super().__init__()
+#        self.title('My Window')
+#        self.geometry( '400x250' )
+
+#win = MyWin()
+
+#label = Label( win, text='무엇하니',bg='yellow',
+#    font=('굴림',24 ),
+#    width=20,height=5,anchor='s' )
+#label.pack()
+
+#win.mainloop()
+
+##############################
+
+#from tkinter import *
+
+#def btnPress():
+#    print('Button is Pressed')
+
+#win = Tk()
+#win.title('Sample Window')
+#win.geometry('300x250')
+
+#img = PhotoImage(file='img/img2.gif')
+#lbName = Label(win, image = img)
+#lbName.pack()
+#btnTel = Button( win, text = '010-1234-1234,\
+#    font=('Times', 30),command=btnPress )
+
+#btnTel.pack()
+#win.mainloop()
+
+#################################
+
+#Button(window, 옵션)
+#-Label() 옵션과 동일
+#command = function
+#표시 pack()메소드 호출
+
+##################################
+
+#from tkinter import *
+
+#def btnPress():
+#    print('Button is Pressed.')
+
+#win = Tk()
+#win.title('sample window')
+#win.geometry('300x150')
+#win.resizable(width=False, height=True)
+#lbName=Label(win, text='010-1234-1234', font=('Times',30))
+#lbName.pack()
+#btnTel=Button(win, text='010-1234-1234', \
+#    font=('Times',30), command=btnPress)
+
+#btnTel.pack()
+#win.mainloop()
+
+####################################
+
+#Checkbutton(window, 옵션)
+#Button()의 옵션과 동일
+#variable = IntVar()_변수
+#-버튼 상태를 나타내는 IntVar()의 변수: 선택 - 1, 해제 - 0
+#-버튼의 상태를 알 수 있는 제어 변수(control vari.)
+#-메소드 : get(), set()
+#표시 : pack()메소드 호출
+
+#####################################
+
+#from tkinter import *
+#def btnPress():
+#    print('Button is Pressed.')
+#    print(chk.get())
+#win = Tk()
+#win.title('Sample Window')
+#win.geometry('300x150')
+#win.resizable(width = False, height=True)
+#lblTel = Label(win, text='010-1234-1234', font=('Times', 30))
+#lblTel.pack()
+
+#chk=IntVar()
+#chkTel = Checkbutton(win, text='010-1234-1234', \
+#    font = ('Times', 30), variable=chk, \
+#        command=btnPress)
+
+#chkTel.pack()
+#win.mainloop()
+
+#################################
+
+#Radiobutton(window, 옵션)
+#옵션: Checkbutton의 옵션과 동일
+#variable = IntVar()_변수
+#Radiobutton들을 모둠으로 모으는 제어 변수
+#동일한 제어 변수를 갖는 Radiobutton은 한 모둠
+
+#value=각_버튼의 값
+#버튼이 선택 될 때 제어 변수에 저장될 값
+#표시 pack()메소드 호출
+
+###################################
+
+#from tkinter import *
+#def btnPress():
+#    print('Button is Pressed.')
+#    print(chk.get())
+
+#win = Tk()
+#win.title('Sample Window')
+#win.geometry('300x150')
+#win.resizable(width=False, height=True)
+#chk = IntVar()
+#chk.set(1)
+#rbTel=Radiobutton(win, text='010-1234-1234',\
+#    variable=chk, value=1, command=btnPress )
+#rbTel.pack()
+#rbName=Radiobutton(win, text='Hong Gil Dong',\
+#    variable=chk, value=2, command=btnPress )
+#rbName.pack()
+#win.mainloop()
+
+####################################
+
+#Entry(window, 옵션)
+#옵션: Label 옵션과 거의 동일
+#border : 외곽선
+#표시 : pack() 메소드 호출
+#이 위젯 변수의 get() 메소드를 이용하여 입력한 문자열 반환
+
+####################################
+
+#from tkinter import *
+
+#def keyin():
+#    lbName.configure(text=enName.get())
+#    enName.delete(0, len(enName.get()))
+
+#win=Tk()
+#win.title('Entry Tester')
+#win.geometry('400x300')
+
+#lbName = Label(win, text = 'Unknown')
+#enName = Entry(win)
+#btnGet=Button(win, text='GET', command=keyin)
+
+#lbName.pack()
+#enName.pack()
+#btnGet.pack()
+
+#win.mainloop()
+
+###################################
+
