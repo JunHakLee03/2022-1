@@ -754,46 +754,159 @@
 
 ################################
 
-from tkinter import *
+#from tkinter import *
 
-topwin = None
-def initwin():
-    global topwin
-    topwin = Tk()
-    topwin.title( 'Menu Testing' )
-    topwin.geometry( '300x250' )
+#topwin = None
+#def initwin():
+#    global topwin
+#    topwin = Tk()
+#    topwin.title( 'Menu Testing' )
+#    topwin.geometry( '300x250' )
 
-def fn():
-    print('Menu processing')
+#def fn():
+#    print('Menu processing')
 
-def mkmenu() :
-    menubar = Menu( topwin )
-    topwin.config( menu=menubar )
+#def mkmenu() :
+#    menubar = Menu( topwin )
+#    topwin.config( menu=menubar )
 
-    filemenu = Menu( menubar )
-    editmenu = Menu( menubar )
+#    filemenu = Menu( menubar )
+#    editmenu = Menu( menubar )
 
-# for File menu
-    filemenu.add_command( label='New', command=fn )
-    projmenu = Menu( filemenu )
-    projmenu.add_command( label='Save' )
-    projmenu.add_command( label='Open' )
-    filemenu.add_cascade( label='Project', menu=projmenu )
-    filemenu.add_separator()
-    filemenu.add_command( label='Exit', command=exit )
+## for File menu
+#    filemenu.add_command( label='New', command=fn )
+#    projmenu = Menu( filemenu )
+#    projmenu.add_command( label='Save' )
+#    projmenu.add_command( label='Open' )
+#    filemenu.add_cascade( label='Project', menu=projmenu )
+#    filemenu.add_separator()
+#    filemenu.add_command( label='Exit', command=exit )
 
-# for Edit menu
-    editmenu.add_command( label='Copy', command=fn )
-    editmenu.add_command( label='Cut' )
-    editmenu.add_command( label='Paste' )
+## for Edit menu
+#    editmenu.add_command( label='Copy', command=fn )
+#    editmenu.add_command( label='Cut' )
+#    editmenu.add_command( label='Paste' )
 
-    menubar.add_cascade( label='File', menu=filemenu )
-    menubar.add_cascade( label='Edit', menu=editmenu )
+#    menubar.add_cascade( label='File', menu=filemenu )
+#    menubar.add_cascade( label='Edit', menu=editmenu )
 
-def apploop():
-    topwin.mainloop()
+#def apploop():
+#    topwin.mainloop()
 
-if __name__ == '__main__' :
-    initwin()
-    mkmenu()
-    apploop()
+#if __name__ == '__main__' :
+#    initwin()
+#    mkmenu()
+#    apploop()
+
+#####################################
+
+#__name__ 변수: 현재 실행되고 있는 모듈의 이름이 저장되어 있는 내장 변수
+#-import 된 모듈의 함수 또는 객체 메소드가 실행되는 경우에는 모듈 이름
+#-직접 실행된 모듈인 경우 '__main__이 저장됨
+
+#####################################
+
+#filedialog 모듈: 파일 이름을 선택 할 수 있는 창을 표시
+#– 파일 열기 : filedialog.askopenfilename( parameters )
+#– 파일 저장 : filedialog.asksaveasfilename( parameters )
+#실제로 파일을 열거나 저장하는 것은 아닌 파일 이름을 리턴함
+
+#파라미터
+#initialdir = dir 처음 표시 할 폴더 지정
+#initialfile = filename 기본 파일 이름
+#title = str 창의 제목
+#filetypes = (('filetype', '*.ext'),...) 표시할 파일 종류와 확장자 지정
+
+#from tkinter import filedialog
+
+#filename = filedialog.askopenfilename( title='열기를 위한 파일 선택',
+#        initialdir='e:/temp',
+#        initialfile='test.txt',
+#        filetypes=( ('텍스트','*.txt'),
+#        ('모든 파일','*.*') ) )
+
+#print( '선택된 파일 이름', filename )
+
+#########################################
+
+#canvas 위젯
+#밑으로 갈 수록 y 값 증가
+#canvas = Canvas(option = value )
+#옵션: bg 배경색, cursor 마우스 포인터 모양, height, width
+
+#선 그리기 canvas.create_line(option = value)
+#옵션: arrow 화살표 표시, dash 점선 그리기, fill 색, tag(s) 태그, width 굵기
+
+#사각형 그리기 canvas.create_rectangle(x0, y0, x1, y1, option=value)
+#옵션: dash 점선 그리기, fill 색, outline 외곽선 그리기 색, tag(s) 태그, width 선 굵기
+
+#타원 그리기 canvas.create_oval(x0, y0, x1, y1, option = value)
+#옵션: dash 점선 그리기, fill 색, outline 외곽선 그리기 색, tag(S) 태그, width 선 굵기
+
+#호 그리기 canvas.create_arc(x0, y0, x1, y1, option = value)
+#옵션: 타원 그리가와 동일한 옵션, start, extent 호를 그릴 시작 각도, 끝 각도, style 호 그리기 스타일
+
+#다각형 그리기 canvas.create_polygon(x0, y0, x1, y1, x2, y2,... , option=value)
+#옵션: dash 점선 그리기, fill 색, outline 외곽선 그리기 색, tag(S) 태그, width 선 굵기
+
+#문자열 출력 canvas.create_text(x, y, option=value)
+#옵션: text 출력할 문자열, fill 색, font 글꼴, anchor 좌표의 위치
+
+#tag를 통해 삭제 canvas.delete(tag0, tag1, ...)
+
+####################################
+
+#from tkinter import *
+#import time
+
+#class Myappl:
+#    def __init__(self):
+#        self.win = Tk()
+#        self.win.title( 'Good' )
+#        self.win.geometry( '400x350' )
+        
+#        self.mkui()
+
+#    def delete( self ):
+#        self.canvas.delete( 'rec', 'tri' )
+#        self.delbtn.config( state=DISABLED )
+
+#    def mainloop(self):
+#        self.win.mainloop()
+
+#    def mkui( self ):
+#        self.canvas = Canvas(self.win, width=400, height=300,
+#        cursor='circle',bg='white',
+#        )   
+#        self.canvas.pack()
+
+#        frame = Frame( self.win )
+#        Button( frame, text='Go', command=self.draw ).pack(side=LEFT)
+#        self.delbtn = Button( frame, text='Delete', command=self.delete )
+#        self.delbtn.pack(side=LEFT)
+#        Button( frame, text='exit', command=exit ).pack(side=LEFT)
+#        frame.pack()
+#        self.delbtn.config( state=DISABLED )
+
+#    def draw( self ):
+#        self.canvas.create_rectangle( 20, 20, 150, 100, outline='black', width=2,tag='rec')
+#        self.canvas.create_text( 450,540,text='안녕',fill='yellow',tag='txt' )
+#        self.canvas.create_arc( 20, 20, 150, 100, outline='black', width=2, start=45, extent=90 )
+#        self.canvas.create_rectangle( 20, 20, 150, 100, outline='black',dash=(2,2) )
+#        self.canvas.create_arc( 20, 100, 150, 180, outline='black', width=2, start=45, extent=90, style=CHORD )
+#        self.canvas.create_rectangle( 20, 100, 150, 180, outline='black',dash=(2,2) )
+#        self.canvas.config(cursor= 'heart')
+#        self.canvas.create_polygon( 10,10,10, 100, 50, 50, outline='black',fill='yellow',tag='tri')
+#        self.canvas.create_text( 100, 50, text='GOOD MORNING', fill='black', font=('명조','18') )
+#        self.canvas.create_line( 100,45, 100, 55, fill='blue',width=3 )
+#        self.canvas.create_line( 95,50, 105, 50, fill='blue',width=3 )
+#        self.canvas.create_text( 100, 80, text='GOOD MORNING', fill='black', font=('명조','18'), anchor='w' )
+#        self.canvas.create_line( 100,75, 100, 85, fill='blue',width=3 )
+#        self.canvas.create_line( 95,80, 105, 80, fill='blue',width=3 )
+#        self.delbtn.config( state=NORMAL )
+
+#app = Myappl()
+#app.mainloop()
+
+####################################################
+
